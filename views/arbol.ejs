@@ -1,0 +1,71 @@
+<% include partials/_header %>
+
+<div class="container">
+        <div class="row mt-5">
+              <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                   <thead>
+                        <tr>
+                            <th>Codigo</th>
+                             <th>altura</th>
+                             <th>tipo</th>
+                             <th>longitud</th>
+                             <th>latidud</th>
+                        </tr>
+                   </thead> 
+                   <tbody>
+                     <%if(data){%>
+                        <%for(var i=0;i< data.length;i++){%>
+                              <tr>
+                                  <td><%= i%></td>
+                                  <td><%= data[i].codigo%></td>
+                                  <td><%= data[i].altura%></td>
+                                  <td><%= data[i].tipo%></td>
+                                  <td><%= data[i].longitud%></td>
+                                  <td><%= data[i].latitud%></td>
+                                  <td>
+                                       <a href="/delete/<%= data[i].codigo%>" class="btn btn-outline-danger">DELETE</a>
+                                       <a href="/update/<%= data[i].codigo%>" class="btn btn-outline-success">Update</a>
+                                  </td>
+                                  
+                              </tr>
+                            <% }%>
+                    <% }%>
+                   </tbody>
+
+                </table>
+              </div> 
+              <div class="col-md-5">
+                   <div class="card"  >
+                        <div class="card-body" title="Registro de arboles">
+                            <h1><b>Registro de arboles </b></h1>
+                                <form action="/add" method="post">
+                                    <div class="form-group">
+                                        <input type="text" name="codigo" placeholder="codigo" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="tipo" placeholder="Nombre" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="altura" placeholder="altura" class="form-control" required >
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="latitud" placeholder="latitud" class="form-control" required >
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="longitud" placeholder="longitud" class="form-control" required >
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                         guardar
+                                    </button>
+                                
+                                </form>
+                        </div>
+
+                   </div> 
+              </div>
+        </div>
+
+</div>
+
+<% include partials/_footer %>

@@ -1,0 +1,34 @@
+<% include partials/_header %>
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="card">
+                  <div class="card-body">
+                      <form action="/update/<%= data.codigo %>" method="post">
+                            <div class="form-group">
+                                <input type="text" name="codigo" placeholder="codigo" value="<%=data.codigo %>" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tipo" placeholder="tipo" value="<%=data.tipo %>" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="altura" placeholder="altura" value="<%=data.altura %>"  class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" name="latitud" placeholder="latitud" value="<%=data.latitud %>"  class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                        <input type="text" name="longitud" placeholder="longitud" value="<%=data.longitud %>"  class="form-control" >
+                                    </div>
+                            <button type="submit" class="btn btn-primary">
+                                editar
+                            </button> 
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+<% include partials/_footer %>
